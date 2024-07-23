@@ -5,7 +5,6 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
-const { error } = require("console");
 const dotenv = require("dotenv");
 dotenv.config();
 const stripe = require("stripe")(process.env.STRIPE_KEY)
@@ -20,7 +19,13 @@ const corsOptions = {
 };
 
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-frontend.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
 // vercel fix
 
 
@@ -357,7 +362,7 @@ app.post('/searchproducts', async (req, res) => {
     res.send(allProducts);
 })
 
-app.listen(port, '0.0.0.0', (error) => {
+app.listen(port, (error) => {
     if (!error) {
         console.log("Running on " + port);
     } else {
