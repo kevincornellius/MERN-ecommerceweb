@@ -1,0 +1,52 @@
+.items {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: baseline;
+    padding-bottom: 10px;
+    transition: 250ms;
+    /* background-color: aqua; */
+}
+
+.items a {
+    text-decoration: none;
+}
+
+.items h2 {
+    font-family: "Volkhov", serif;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 10px 0;
+}
+
+.itemspricing h3 {
+    padding: 10px 0;
+    font-size: 12px;
+    font-weight: 600;
+    /* width: 200px; */
+    /* background-color: antiquewhite; */
+}
+
+.items img {
+    width: 200px;
+    border-radius: 13px;
+}
+
+.itemspricing {
+    display: flex;
+    width: 200px;
+
+}
+
+.itemspricing h4 {
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #666666;
+    text-decoration: line-through;
+}
+
+.items:hover {
+    transform: scale(1.02);
+}

@@ -1,0 +1,154 @@
+.catalog {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    /* padding: 40px 20px; */
+}
+
+.catalog-content {
+    display: flex;
+
+}
+
+.catalog-filters h2,
+.catalog-filters h3 {
+    font-family: "Volkhov", serif;
+    font-weight: 500;
+    color: #000000;
+    margin: 25px 0;
+}
+
+.catalog-filters p {
+    font-size: 12px;
+    cursor: pointer;
+    color: #666666;
+}
+
+.catalog-filters button {
+    background-color: #FFFFFF;
+    border: 1px solid #666666;
+    margin-right: 6px;
+    border-radius: 3px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    outline: none;
+}
+
+.catalog-filters {
+    width: 200px;
+    /* margin: 20px; */
+    /* background-color: aliceblue; */
+}
+
+.catalog h1 {
+    font-family: "Volkhov", serif;
+    font-weight: 500;
+    color: #000000;
+
+}
+
+.catalog-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.catalog-cards .items {
+    margin: 20px;
+}
+
+
+@media (max-width:1000px) {
+    .catalog-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .catalog-filters {
+        display: flex;
+        width: 80%;
+        justify-content: space-around;
+    }
+
+    .divisorsCatalogFilters {
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+        margin: 0 30px;
+    }
+}
+
+@media (max-width:760px) {
+    .catalog-filters {
+        padding: 0;
+    }
+
+    .divisorsCatalogFilters {
+
+        padding: 0px 5px;
+        margin: 0 5px;
+        width: 100px;
+    }
+
+    .catalog-filters h2 {
+        font-size: 16px;
+        padding-right: 10px;
+
+    }
+
+    .catalog-filters h3 {
+        font-size: 13px;
+    }
+
+    .catalog-filters p {
+        font-size: 10px;
+    }
+
+    .catalog-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:500px) {
+    .catalog-filters {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .divisorsCatalogFilters {
+
+        padding: 0px 5px;
+        margin: 0 5px;
+        width: 100px;
+    }
+
+    .catalog-filters h2 {
+        /* width: auto;/ */
+        font-size: 16px;
+        padding: 0;
+        /* padding-right: 10px; */
+    }
+
+    .catalog-filters h3 {
+        font-size: 13px;
+        margin: 15px 0;
+    }
+
+    .catalog-filters p {
+        font-size: 10px;
+        margin: 0;
+    }
+
+    .catalog-cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
