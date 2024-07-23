@@ -9,6 +9,14 @@ const dotenv = require("dotenv");
 dotenv.config();
 const stripe = require("stripe")(process.env.STRIPE_KEY)
 const app = express();
+const cloudinary = require('cloudinary').v2;
+
+
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.CLOUD_KEY2,
+    api_secret: process.env.CLOUDINARY_KEY // Click 'View Credentials' below to copy your API secret
+});
 
 const corsOptions = {
     origin: ['http://localhost:5174', 'http://localhost:5173', 'https://js.stripe.com', 'https://checkout.stripe.com/'],// frontend IP and port
@@ -21,7 +29,7 @@ const corsOptions = {
 app.use(express.json());
 app.use(cors(
     {
-        origin: ["https://deploy-mern-frontend.vercel.app"],
+        origin: ['http://localhost:5174', 'http://localhost:5173', 'https://js.stripe.com', 'https://checkout.stripe.com/'],
         methods: ["POST", "GET"],
         credentials: true
     }
@@ -43,8 +51,48 @@ app.get("/", (req, res) => {
 })
 
 
+const opts = {
+    overwrite: true,
+    invalidate: true,
+    resource_type: "auto",
+};
 
 //Image Storage
+
+app.post("/upload", (req, res) => {
+    console.log(req.body);
+    cloudinary.uploader.upload(req.body.image, opts, (error, resp) => {
+        if (resp && resp.url) {
+            console.log(resp.url);
+            res.json({
+                success: 1,
+                image_url: resp.url,
+            })
+        } else {
+            console.log(error.message);
+            res.json({
+                success: 0,
+                image_url: "",
+            })
+        }
+
+    })
+})
+
+// module.exports = (image) => {
+//     return new Promise((resolve, reject) => {
+//         cloudinary.uploader.upload(image, opts, (error, res) => {
+//             if (res && res.url) {
+//                 console.log(res.url);
+//                 return resolve(res.url);
+//             }
+//             console.log(error.message);
+//             return reject({ message: error.message });
+//         })
+//     })
+// }
+
+
 
 // const storage = multer.diskStorage({
 //     destination: './upload/images',
@@ -60,7 +108,7 @@ app.get("/", (req, res) => {
 // app.post("/upload", upload.single('product'), (req, res) => {
 //     res.json({
 //         success: 1,
-//         image_url: `http://${req.hostname}:/images/${req.file.filename}`,
+//         image_url: `http://${req.hostname}:${port}/images/${req.file.filename}`,
 //     })
 // })
 

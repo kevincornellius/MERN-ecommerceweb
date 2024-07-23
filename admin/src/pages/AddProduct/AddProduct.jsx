@@ -19,7 +19,16 @@ const AddProduct = () => {
 
         setProductDesc({ ...productDesc, [e.target.name]: e.target.value })
     }
-
+    const convertBase64 = (file) => {
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+            return reader.result;
+        };
+        reader.onerror = function (error) {
+            console.log('Error: ', error);
+        };
+    }
     const submitProduct = async () => {
         console.log(productDesc);
         let resp;
@@ -28,12 +37,14 @@ const AddProduct = () => {
         let formData = new FormData();
         formData.append('product', image);
 
+        const base64 = convertBase64(image);
+        console.log("YO", base64);
         await fetch(`${import.meta.env.VITE_API_URL}/upload`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
             },
-            body: formData,
+            body: JSON.stringify({ image: base64 }),
         }).then((res) => res.json()).then((data) => { resp = data })
 
         if (resp.success) {
