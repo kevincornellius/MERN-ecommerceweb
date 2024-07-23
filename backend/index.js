@@ -46,23 +46,23 @@ app.get("/", (req, res) => {
 
 //Image Storage
 
-const storage = multer.diskStorage({
-    destination: './upload/images',
-    filename: (req, file, cb) => {
-        return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
-    }
-})
+// const storage = multer.diskStorage({
+//     destination: './upload/images',
+//     filename: (req, file, cb) => {
+//         return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+//     }
+// })
 
-const upload = multer({ storage: storage })
+// const upload = multer({ storage: storage })
 
-app.use('/images', express.static('upload/images'))
+// app.use('/images', express.static('upload/images'))
 
-app.post("/upload", upload.single('product'), (req, res) => {
-    res.json({
-        success: 1,
-        image_url: `http://${req.hostname}:/images/${req.file.filename}`,
-    })
-})
+// app.post("/upload", upload.single('product'), (req, res) => {
+//     res.json({
+//         success: 1,
+//         image_url: `http://${req.hostname}:/images/${req.file.filename}`,
+//     })
+// })
 
 
 //Product Schema MongoDB
