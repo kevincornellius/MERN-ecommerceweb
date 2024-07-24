@@ -1,5 +1,15 @@
 # Full Stack Projects - E-commerce web 
 
+## Technology Stack
+
+- **Frontend**: [React.js](https://reactjs.org/), [Redux](https://redux.js.org/), [React Router](https://reactrouter.com/)
+- **Backend**: [Node.js](https://nodejs.org/), [Express.js](https://expressjs.com/)
+- **Database**: [MongoDB](https://www.mongodb.com/) (with [Mongoose](https://mongoosejs.com/))
+- **Payment Integration**: [Stripe API](https://stripe.com/)
+- **Image Storage**: [Cloudinary](https://cloudinary.com/) with [Multer](https://github.com/expressjs/multer) middleware
+- **Authentication**: [JSON Web Tokens (JWT)](https://jwt.io/)
+- **Styling**: [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+
 This project utilizes the MERN stack and is integrated with Stripe (beta) for the checkout process. Additionally, it uses Cloudinary for cloud storage of item images, with Multer as the middleware. The frontend demo is accessible at: https://ecommerceweb-frontend.vercel.app/. Please note that the search bar functionality might be flawed due to free hosting limitations.
 
 ### Demo Account 
@@ -23,14 +33,8 @@ The admin panel, not deployed publicly for security reasons, includes the follow
 - **Product Management**: View a list of products, add new products.
 - **User Management**: View a list of registered users, manage user accounts, and delete users if necessary.
 
+<img src="https://github.com/user-attachments/assets/b50568a0-96d4-46b8-81f5-d1a80babdab5" width="600"  />
+<img src="https://github.com/user-attachments/assets/d7514705-d1fe-4613-9889-a8bf67f00806" width="600"  />
+<img src="https://github.com/user-attachments/assets/b7989b0d-0c18-4235-bae2-506e5b52b49f" width="600"  />
 
 
-## Technology Stack
-
-- **Frontend**: React.js, Redux, React Router
-- **Backend**: Node.js, Express.js
-- **Database**: MongoDB (with Mongoose)
-- **Payment Integration**: Stripe API
-- **Image Storage**: Cloudinary with Multer middleware
-- **Authentication**: JSON Web Tokens (JWT)
-- **Styling**: CSS
