@@ -22,7 +22,7 @@ const ProductInfo = (props) => {
         } else {
             setStarred(false);
         }
-        console.log(stt);
+        // console.log(stt);
     }, [product, starItems])
 
     const toogleFav = () => {

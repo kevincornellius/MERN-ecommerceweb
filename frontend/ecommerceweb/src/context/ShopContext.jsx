@@ -38,7 +38,7 @@ const ShopContextProvider = (props) => {
                     'auth-token': localStorage.getItem('auth-token'),
                     'Content-Type': 'application/json',
                 },
-                body: "",
+                body: JSON.stringify({}),
             }).then((resp) => resp.json()).then((data) => setUserInfo(data));
 
             if (userInfo != []) {
@@ -49,7 +49,7 @@ const ShopContextProvider = (props) => {
                         'auth-token': localStorage.getItem('auth-token'),
                         'Content-Type': 'application/json',
                     },
-                    body: "",
+                    body: JSON.stringify({}),
                 }).then((resp) => resp.json()).then((data) => setCartItems(data));
 
                 fetch(`${import.meta.env.VITE_API_URL}/getuserstar`, {
@@ -59,7 +59,7 @@ const ShopContextProvider = (props) => {
                         'auth-token': localStorage.getItem('auth-token'),
                         'Content-Type': 'application/json',
                     },
-                    body: "",
+                    body: JSON.stringify({}),
                 }).then((resp) => resp.json()).then((data) => setStarItems(data));
 
             } else {
@@ -144,10 +144,10 @@ const ShopContextProvider = (props) => {
                     'auth-token': localStorage.getItem('auth-token'),
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ "itemID": itemId }),
+                body: JSON.stringify({ "itemID": Number(itemId) }),
             });
 
-            console.log(starItems, "X");
+            // console.log(starItems, "X");
         } else {
             window.alert("Please login first");
         }
@@ -217,7 +217,7 @@ const ShopContextProvider = (props) => {
         }).then((res) => res.json()).then((data) => { resp = data });
 
         if (resp.success) {
-            console.log("Signed Up", formData);
+            // console.log("Signed Up", formData);
             localStorage.setItem('auth-token', resp.token);
             window.location.replace('/');
         } else {
@@ -239,7 +239,7 @@ const ShopContextProvider = (props) => {
         }).then((res) => res.json()).then((data) => { resp = data });
 
         if (resp.success) {
-            console.log("Logged in", formData);
+            // console.log("Logged in", formData);
             localStorage.setItem('auth-token', resp.token);
             window.location.replace('/');
         } else {

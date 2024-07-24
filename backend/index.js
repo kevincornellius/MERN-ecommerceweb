@@ -266,7 +266,7 @@ app.post('/getuserstar', fetchUser, async (req, res) => {
 app.post('/toogleuserstar', fetchUser, async (req, res) => {
 
     let pointUser = await User.findOne({ _id: req.user.id });
-
+    console.log(req.body.itemID);
     pointUser.starData[req.body.itemID] = pointUser.starData[req.body.itemID] ? 0 : 1;
     await User.findOneAndUpdate({ _id: req.user.id }, { starData: pointUser.starData });
 
