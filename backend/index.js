@@ -19,8 +19,8 @@ cloudinary.config({
 });
 
 const corsOptions = {
-    origin: ['https://ecommerceweb-frontend.vercel.app/', 'https://js.stripe.com', 'https://checkout.stripe.com/'],// frontend IP and port
-    default: 'https://ecommerceweb-frontend.vercel.app/',
+    origin: ['https://ecommerceweb-frontend.vercel.app', 'https://js.stripe.com', 'https://checkout.stripe.com/'],// frontend IP and port
+    default: 'https://ecommerceweb-frontend.vercel.app',
     optionsSuccessStatus: 200,
 
 
