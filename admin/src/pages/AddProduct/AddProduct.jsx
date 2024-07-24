@@ -37,14 +37,13 @@ const AddProduct = () => {
         let formData = new FormData();
         formData.append('product', image);
 
-        const base64 = convertBase64(image);
-        console.log("YO", base64);
+
         await fetch(`${import.meta.env.VITE_API_URL}/upload`, {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
             },
-            body: JSON.stringify({ image: base64 }),
+            body: formData,
         }).then((res) => res.json()).then((data) => { resp = data })
 
         if (resp.success) {

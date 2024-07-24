@@ -11,7 +11,7 @@ const Profile = () => {
                 <h1>{"Hello, " + userInfo.name}</h1>
                 <div className="actbutton-profile">
                     <button onClick={() => { localStorage.removeItem('auth-token'); window.location.replace('/') }}>Logout</button>
-                    <button onClick={() => { deleteUser(); localStorage.removeItem('auth-token'); window.location.replace('/'); window.alert("Account Deleted") }}>Delete Account</button>
+                    {/* <button onClick={() => { deleteUser(); localStorage.removeItem('auth-token'); window.location.replace('/'); window.alert("Account Deleted") }}>Delete Account</button> */}
                 </div>
 
             </div>

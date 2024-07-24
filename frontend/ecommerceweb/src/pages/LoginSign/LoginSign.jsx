@@ -56,6 +56,7 @@ const LoginSign = () => {
             <div className="login-sign">
                 <img src={imageS} alt="" />
                 <div className="logsig-container">
+                    <small> Demo account available <a href='https://github.com/kevincornellius/ecommerceweb'> here </a></small>
                     <h1>{curLog ? 'Log In' : 'Sign Up'}</h1>
                     <div className="logsig-field">
                         {curLog ? '' : <input type='text' name='name' value={formData.name} onChange={changeHandler} placeholder='Your Name' />}
