@@ -19,8 +19,8 @@ cloudinary.config({
 });
 
 const corsOptions = {
-    origin: ['http://localhost:5174', 'http://localhost:5173', 'https://js.stripe.com', 'https://checkout.stripe.com/'],// frontend IP and port
-    default: 'http://localhost:5174',
+    origin: ['https://ecommerceweb-frontend.vercel.app/', 'https://js.stripe.com', 'https://checkout.stripe.com/'],// frontend IP and port
+    default: 'https://ecommerceweb-frontend.vercel.app/',
     optionsSuccessStatus: 200,
 
 
@@ -317,8 +317,8 @@ app.post('/create-payment', async (req, res) => {
         payment_method_types: ["card"],
         line_items: lineItem,
         mode: "payment",
-        success_url: "http://localhost:5173",
-        cancel_url: "http://localhost:5173",
+        success_url: "https://ecommerceweb-frontend.vercel.app/",
+        cancel_url: "https://ecommerceweb-frontend.vercel.app/",
     })
     console.log(session.url);
     console.log(lineItem[0].price_data.product_data);
