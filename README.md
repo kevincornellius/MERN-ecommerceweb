@@ -27,6 +27,12 @@ This project utilizes the MERN stack and is integrated with Stripe (beta) for th
 - **Search Menu**: Allows users to search for products (note: may have limitations due to hosting issues).
 - **Cart**: Integrated with Stripe for secure payment processing.
 
+<img src="https://github.com/user-attachments/assets/1de427a5-e585-41d1-9e9e-ca1560e03390" width="600"  />
+
+<img src="https://github.com/user-attachments/assets/0ffd10be-f6c3-47f2-a370-3e83fa173470" width="600"  />
+
+<img src="https://github.com/user-attachments/assets/c760ed6f-3766-4913-8eef-d62eec868a22" width="600"  />
+
 ### Admin Dashboard
 
 The admin panel, not deployed publicly for security reasons, includes the following features:
